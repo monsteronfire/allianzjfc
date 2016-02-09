@@ -1,0 +1,15 @@
+section {
+  $large-screen: em(768) !default;
+  padding-top: em(16);
+  padding-right: em(10);
+  padding-bottom: em(16);
+  padding-left: em(10);
+
+  @include media($large-screen) {
+    
+  }
+}
+
+.section__inner {
+  @include outer-container;
+}

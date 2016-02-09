@@ -1,0 +1,95 @@
+$medium-screen: em(768) !default;
+
+h1 {
+  color: $white;
+  font-family: 'Signika', sans-serif;
+  text-shadow: em(1) em(1) em(1) rgba(0, 0, 0, 0.5);
+
+  @include media($medium-screen) {
+    width: em(250);
+    margin: 0 auto;
+  }
+}
+
+h2 {
+  color: $supernova;
+  font-family: 'Sansita One', cursive;
+  text-shadow: em(1) em(1) em(1) rgba(0, 0, 0, 0.5);
+}
+
+h3 {
+  color: lighten($pureblack, 30%);
+  font-family: 'Signika', sans-serif;
+  @include font-size(24);
+  text-align: center;
+
+  &:after {
+    content: '';
+    display: block;
+    width: em(60);
+    margin: em(10) auto 0 auto;
+    border-bottom: em(1) solid lighten($pureblack, 70%);
+  }
+
+  @include media($medium-screen) {
+    width: em(300);
+    margin: 0 auto;
+  }
+}
+
+h4 {
+  color: $black;
+  font-family: 'Open Sans', sans-serif;
+  @include font-size(18);
+  -webkit-margin-before: em(10);
+    -webkit-margin-after: em(10);
+}
+
+h5 {
+  color: lighten($pureblack, 35%);
+  font-family: 'Signika', sans-serif;
+  @include font-size(20);
+  -webkit-margin-before: em(15);
+    -webkit-margin-after: em(5);
+    -webkit-margin-start: em(0);
+    -webkit-margin-end: em(0);
+}
+
+p, a, ul li, li {
+  font-family: 'Open Sans', sans-serif;
+  @include font-size(13);
+}
+
+a {
+  color: $dodger-blue;
+}
+
+ul li {
+  list-style: disc;
+}
+
+.section__subline {
+  color: lighten($pureblack, 50%);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/** Hero Typography **/
+.hero__categories {
+  ul li {
+    text-align: center;
+  }
+
+  ul li .fa {
+    @include font-size(25);
+  }
+
+  ul li p {
+    @include font-size(10);
+  }
+
+  ul li .fa,
+  ul li p {
+    color: $black;
+  }
+}

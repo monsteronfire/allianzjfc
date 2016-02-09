@@ -1,0 +1,14 @@
+{
+  "name": "allianzjfc",
+  "authors": [
+    "monsteronfire <monsteronfire@gmail.com>"
+  ],
+  "description": "Aliianz Junior Football Camp",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

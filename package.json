@@ -8,7 +8,9 @@
     "url": "git+https://github.com/monsteronfire/allianzjfc.git"
   },
   "author": "monsteronfire@gmail.com",
-  "dependencies": {},
+  "dependencies": {
+    "handlebars": "^4.0.5"
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.7.0",

@@ -1,0 +1,26 @@
+.menu--offcanvas {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 700;
+  background-color: $white;
+  height: 100%;
+  padding: em(90) em(20) em(20) em(20);
+  text-align: right;
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    margin-bottom: em(25);
+
+    &:last-child {
+      margin-bottom: em(0);
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

@@ -31,19 +31,22 @@ $mine-shaft: #2D2D2D;
 
 
 section {
-  $large-screen: em(768) !default;
-  padding-top: em(16);
-  padding-right: em(10);
-  padding-bottom: em(16);
-  padding-left: em(10);
-
-  @include media($large-screen) {
-    
+  $xxlarge-screen: em(1670);
+  $xlarge-screen: em(1280);
+  $large-screen: em(1024);
+  $medium-screen: em(768) !default;
+  $small-screen: em(300) !default;
+  
+  &.section {
+    padding-top: em(5);
+    padding-right: em(10);
+    padding-bottom: em(10);
+    padding-left: em(10);
   }
-}
 
-.section__inner {
-  @include outer-container;
+  .section__inner {
+    @include outer-container;
+  }
 }
 
 /** Mixins Start Below **/

@@ -7,6 +7,10 @@
 
   width: 100%;
   margin: 0 auto;
+  padding-top: em(10);
+  padding-right: em(10);
+  padding-bottom: em(5);
+  padding-left: em(10);
   position: relative;
 
   .slider-wrapper {
@@ -28,12 +32,12 @@
     display: block;
   }
 
-  .slider-wrapper img {
+  .slider-wrapper img.slider__img {
     position: absolute;
     max-width: 100%;
     width: 100%;
     height: auto;
-    top: 0;
+    bottom: 0;
     left: 0;
   }
 
@@ -70,7 +74,7 @@
 
   @include media($small-screen) {
     .slider-wrapper {
-      height: em(175);
+      height: em(170);
     }
   }
 

@@ -1,3 +1,62 @@
 .container--main {
   background-color: $seashell;
 }
+
+section {
+  $xxlarge-screen: em(1670);
+  $xlarge-screen: em(1280);
+  $large-screen: em(1024);
+  $medium-screen: em(768) !default;
+  $small-screen: em(300) !default;
+
+  &:first-child {
+    padding-top: em(10);
+  }
+
+  &.section--secondary-content {
+    .section__inner {
+      max-width: 100%;
+    }
+
+    .section--secondary__inner {
+      @include clearfix;
+    }
+  }
+
+  .secondary-content__box {
+    display: block;
+    float: left;
+
+    img {
+      width: 100%;
+    }
+
+    @include media($small-screen) {
+      width: 100%;
+
+      &:first-child {
+        padding-right: em(0);
+        padding-bottom: em(5);
+      }
+
+      &:last-child {
+        padding-left: em(0);
+        padding-top: em(5);
+      }
+    }
+
+    @include media($medium-screen) {
+      width: 50%;
+
+      &:first-child {
+        padding-right: em(5);
+        padding-bottom: em(0);
+      }
+
+      &:last-child {
+        padding-left: em(5);
+        padding-top: em(0);
+      }
+    }
+  }
+}

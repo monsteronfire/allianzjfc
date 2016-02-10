@@ -73,7 +73,7 @@ module.exports = function(grunt) {
         files: [
           { src: '<%= app %>/index.html', dest: '<%= distFolder %>/index.html'},
           { src: '<%= app %>/404.html', dest: '<%= distFolder %>/404.html'},
-          { src: '<%= app %>/scripts/handlebars-v4.0.5.js', dest: '<%= distFolder %>/scripts/handlebars-v4.0.5.js'}
+          { src: '<%= app %>/favicon.ico', dest: '<%= distFolder %>/favicon.ico'}
         ]
       }
     },

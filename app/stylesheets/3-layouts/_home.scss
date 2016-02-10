@@ -13,3 +13,7 @@ section {
 .section__inner {
   @include outer-container;
 }
+
+.container--main {
+  background-color: $seashell;
+}

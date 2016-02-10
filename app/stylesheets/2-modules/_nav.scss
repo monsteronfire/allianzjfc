@@ -1,61 +1,99 @@
-/* One level of nesting -- don't overdo it! */
+header.navigation {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $large-screen: em(860) !default;
+  $navigation-padding: 1em;
+  $navigation-background: white;
+  $navigation-color: transparentize($dark-gray, 0.3);
+  $navigation-color-hover: $dark-gray;
+  $navigation-height: 60px;
+  $navigation-nav-button-background: $action-color;
+  $navigation-nav-button-background-hover: lighten($navigation-background, 10%);
+  $navigation-nav-button-border: 1px solid lighten($navigation-nav-button-background, 20%);
+  $navigation-search-background: lighten($navigation-background, 5);
+  $navigation-search-border: 1px solid darken($navigation-background, 5);
+  $navigation-active-link-color: transparentize(white, 0.5);
+  $navigation-submenu-padding: 1em;
+  $navigation-submenu-width: 12em;
+  $horizontal-bar-mode: $large-screen;
 
-
-.navigation--main {
-  $medium-screen: em(768) !default;
-  @include outer-container;
-  @include abs-pos(em(0), auto, auto, em(0));
-  z-index: 2;
-  padding-top: em(20);
-  padding-right: em(10);
-  padding-left: em(10);
-  text-align: center;
+  background-color: $navigation-background;
+  /*border-bottom: 1px solid darken($navigation-background, 10);*/
+  min-height: $navigation-height;
   width: 100%;
+  z-index: 999;
 
-  @include media($medium-screen) {
-
-  }
-}
-
-.logo--main {
-  $medium-screen: em(768) !default;
-  $large-screen: em(1024) !default;
-  @include span-columns(12);
-
-  img {
-    width: em(270);
+  .navigation-wrapper {
+    @include clearfix;
+    @include outer-container;
+    position: relative;
+    z-index: 9999;
   }
 
-  @include media($medium-screen) {
-    @include span-columns(5);
-    text-align: left;
-  }
+  .logo {
+    float: left;
+    max-height: $navigation-height;
+    padding-left: $navigation-padding;
+    padding-right: 2em;
 
-  @include media($large-screen) {
-    @include span-columns(5);
-  }
-}
-
-.navigation--main nav {
-  $medium-screen: em(768) !default;
-  @include span-columns(12);
-
-  ul {
-    padding-left: em(0);
-  }
-
-  ul li {
-    display: inline-block;
-    list-style: none;
-    margin-right: em(5);
-    margin-left: em(5);
-  }
-
-  @include media($medium-screen) {
-    @include span-columns(5);
-
-    ul {
-      text-align: right;
+    img {
+      max-height: $navigation-height;
+      padding: 0.8em 0;
     }
   }
+
+  // Mobile view
+
+  .navigation-menu-button {
+    color: $navigation-color;
+    display: block;
+    float: right;
+    line-height: $navigation-height;
+    margin: 0;
+    padding-right: 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include media ($horizontal-bar-mode) {
+      display: none;
+    }
+
+    &:focus,
+    &:hover {
+      color: $navigation-color-hover;
+    }
+  }
+
+  // Elements on the far right
+
+  .navigation__content-right {
+    @include clearfix;
+    display: block;
+    float: right;
+  }
+
+  .language-select__button-holder {
+    float: left;
+    margin-right: em(30);
+    padding-top: em(3);
+  }
+
+  .language-select__button-holder li {
+    list-style: none;
+    display: inline-block;
+    background-color: $grey;
+    border-radius: em(3);
+  }
+
+  .language-select__button-holder li a {
+    display: block;
+    color: $white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: em(13);
+    text-decoration: none;
+    padding: em(5);
+  }
+
 }

@@ -4,11 +4,13 @@ header.navigation {
   $action-color: #477DCA !default;
   $dark-gray: #333 !default;
   $large-screen: em(860) !default;
+  $medium-screen: em(768) !default;
+  $small-screen: em(300) !default;
   $navigation-padding: 1em;
   $navigation-background: white;
   $navigation-color: transparentize($dark-gray, 0.3);
   $navigation-color-hover: $dark-gray;
-  $navigation-height: 60px;
+  $navigation-height: 70px;
   $navigation-nav-button-background: $action-color;
   $navigation-nav-button-background-hover: lighten($navigation-background, 10%);
   $navigation-nav-button-border: 1px solid lighten($navigation-nav-button-background, 20%);
@@ -21,13 +23,20 @@ header.navigation {
 
   background-color: $navigation-background;
   /*border-bottom: 1px solid darken($navigation-background, 10);*/
-  min-height: $navigation-height;
   width: 100%;
   z-index: 999;
 
+  @include media($small-screen) {
+    min-height: 60px;
+  }
+
+  @include media($medium-screen) {
+    min-height: $navigation-height;
+  }
+
   .navigation-wrapper {
     @include clearfix;
-    @include outer-container;
+    /*@include outer-container;*/
     position: relative;
     z-index: 9999;
   }
@@ -36,33 +45,64 @@ header.navigation {
     float: left;
     max-height: $navigation-height;
     padding-left: $navigation-padding;
-    padding-right: 2em;
 
     img {
-      max-height: $navigation-height;
+      /*max-height: $navigation-height;*/
       padding: 0.8em 0;
+    }
+
+    @include media($small-screen) {
+      padding-right: em(16);
+
+      img {
+        max-height: 60px;
+      }
+    }
+
+    @include media($medium-screen) {
+      padding-right: 2em;
+
+      img {
+        max-height: $navigation-height;
+      }
     }
   }
 
-  // Mobile view
-
-  .navigation-menu-button {
-    color: $navigation-color;
+  /** Menu Button **/
+  .navigation__menu-button {
     display: block;
     float: right;
-    line-height: $navigation-height;
-    margin: 0;
-    padding-right: 1em;
+    color: $torea-bay;
+    text-align: center;
     text-decoration: none;
-    text-transform: uppercase;
+    border-left: 1px solid $grey;
 
-    @include media ($horizontal-bar-mode) {
-      display: none;
+    .fa-navicon {
+      font-size: em(21);
     }
 
-    &:focus,
+    /*&:before {
+      content: '\f0c9';
+      font-family: 'FontAwesome';
+      font-size: em(21);
+    }*/
+
     &:hover {
-      color: $navigation-color-hover;
+      color: lighten($torea-bay, 10%);
+    }
+
+    @include media($small-screen) {
+      padding-top: em(20);
+      padding-right: em(20);
+      padding-bottom: em(20);
+      padding-left: em(20);
+    }
+
+    @include media($medium-screen) {
+      padding-top: em(24);
+      padding-right: em(30);
+      padding-bottom: em(24);
+      padding-left: em(30);
     }
   }
 
@@ -76,8 +116,16 @@ header.navigation {
 
   .language-select__button-holder {
     float: left;
-    margin-right: em(30);
     padding-top: em(3);
+    padding-left: em(0);
+
+    @include media($small-screen) {
+      margin-right: em(15);
+    }
+
+    @include media($medium-screen) {
+      margin-right: em(30);
+    }
   }
 
   .language-select__button-holder li {
@@ -85,6 +133,12 @@ header.navigation {
     display: inline-block;
     background-color: $grey;
     border-radius: em(3);
+    margin-left: em(2);
+    margin-right: em(2);
+
+    &:hover {
+      background-color: darken($grey, 10%);
+    }
   }
 
   .language-select__button-holder li a {

@@ -1,0 +1,100 @@
+.slider-container {
+  $xxlarge-screen: em(1670);
+  $xlarge-screen: em(1280);
+  $large-screen: em(1024);
+  $medium-screen: em(768) !default;
+  $small-screen: em(300) !default;
+
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  .slider-wrapper {
+    z-index: 500;
+    position: relative;
+    width: 100%;
+    height: 360px;
+    background: #FFF;
+    overflow: hidden;
+    padding-left: em(0);
+    margin: em(0);
+  }
+
+  .slider-wrapper li {
+    display: none;
+  }
+
+  .slider-wrapper .current-slide {
+    display: block;
+  }
+
+  .slider-wrapper img {
+    position: absolute;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+  }
+
+  /**
+   * ---[Botones-Control] ---------------------- 
+   **/
+  .control-buttons {
+    margin-top: 15px;
+    text-align: center;
+    padding-left: em(0);
+    position: absolute;
+    bottom: em(20);
+    left: 30%;
+    right: 30%;
+    z-index: 999;
+  }
+
+  .control-buttons li {
+    cursor: pointer;
+    display: inline-block;
+    background: $grey;
+    text-indent: -99999px;
+    height: 12px;
+    width: 12px;
+    margin: 0 6px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+  .control-buttons li.active {
+    background: $white;
+  }
+
+  @include media($small-screen) {
+    .slider-wrapper {
+      height: em(175);
+    }
+  }
+
+  @include media($medium-screen) {
+    .slider-wrapper {
+      height: em(420);
+    }
+  }
+
+  @include media($large-screen) {
+    .slider-wrapper {
+      height: em(565);
+    }
+  }
+
+  @include media($xlarge-screen) {
+    .slider-wrapper {
+      height: em(709);
+    }
+  }
+
+  @include media($xxlarge-screen) {
+    .slider-wrapper {
+      height: em(930);
+    }
+  }
+}

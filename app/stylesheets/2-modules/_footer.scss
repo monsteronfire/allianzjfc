@@ -1,3 +1,45 @@
 footer.footer--main {
   background-color: $mine-shaft;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  a, p {
+    color: $grey;
+    font-family: 'Montserrat', sans-serif;
+    font-size: em(12)
+  }
+
+  section {
+    padding-right: em(0);
+    padding-left: em(0);
+  }
+
+  .copyright {
+    margin-bottom: em(0);
+  }
+}
+
+.footer__link-list {
+  list-style: none;
+  margin-top: em(0);
+  padding-left: em(0);
+
+  li {
+    display: inline-block;
+    margin-right: em(15);
+    margin-left: em(15);
+  }
+}
+
+.footer__content--top {
+  border-bottom: em(1) solid $grey;
+}
+
+.footer__content--top,
+.footer__content--bottom {
+  padding-right: em(10);
+  padding-left: em(10);
 }

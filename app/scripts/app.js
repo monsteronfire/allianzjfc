@@ -111,17 +111,28 @@ $(function() {
 });
 
 $(document).ready(function() {
-  var menuToggle = $('#js-mobile-menu').unbind();
-  $('#js-navigation-menu').removeClass("show");
+
+  var menuToggle = $('#js-menu-toggle').unbind();
+  $('#js-offcanvas-menu').removeClass("show");
 
   menuToggle.on('click', function(e) {
     e.preventDefault();
-    $('#js-navigation-menu').slideToggle(function(){
-      if($('#js-navigation-menu').is(':hidden')) {
-        $('#js-navigation-menu').removeAttr('style');
+
+    $('#js-offcanvas-menu').slideToggle(function(){
+      if($('#js-offcanvas-menu').is(':hidden')) {
+        $('#js-offcanvas-menu').removeAttr('style');
       }
     });
   });
+
+  $(document).on('click', function() {
+    if (!$(event.target).closest(menuToggle).length) {
+      $('#js-offcanvas-menu').slideUp();
+      // console.log('should close');
+    }
+  });
+
+
 });
 
 

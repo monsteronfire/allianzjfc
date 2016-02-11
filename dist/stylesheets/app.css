@@ -409,8 +409,13 @@ header.navigation {
   background-color: white;
   /*border-bottom: 1px solid darken($navigation-background, 10);*/
   width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
   z-index: 999;
-  /** Menu Button **/ }
+  border-bottom: 1px solid #E8E8E8;
+  /** Menu Button **/
+  /*Elements on the far right*/ }
   @media screen and (min-width: 18.75em) {
     header.navigation {
       min-height: 60px; } }
@@ -499,15 +504,24 @@ header.navigation {
     text-decoration: none;
     padding: 0.3125em; }
 
+@media screen and (min-width: 18.75em) {
+  .navigation--height-offset {
+    height: 3.75em; } }
+@media screen and (min-width: 48em) {
+  .navigation--height-offset {
+    height: 4.375em; } }
+
 .menu--offcanvas {
   position: fixed;
   top: 0;
   right: 0;
   z-index: 700;
-  background-color: #FFFFFF;
+  background-color: white;
+  box-shadow: -5px 10px 15px 5px rgba(0, 0, 0, 0.1);
   height: 100%;
-  padding: 5.625em 1.25em 1.25em 1.25em;
-  text-align: right; }
+  padding: 1.25em 1.25em 1.25em 1.25em;
+  text-align: right;
+  display: none; }
   .menu--offcanvas ul {
     list-style: none; }
   .menu--offcanvas li {
@@ -515,7 +529,22 @@ header.navigation {
     .menu--offcanvas li:last-child {
       margin-bottom: 0em; }
   .menu--offcanvas a {
-    text-decoration: none; }
+    color: #939393;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8125em;
+    text-decoration: none;
+    text-transform: uppercase; }
+    .menu--offcanvas a.inactive {
+      color: rgba(147, 147, 147, 0.3);
+      cursor: default; }
+  .menu--offcanvas.show {
+    display: block; }
+  @media screen and (min-width: 18.75em) {
+    .menu--offcanvas {
+      margin-top: 3.75em; } }
+  @media screen and (min-width: 48em) {
+    .menu--offcanvas {
+      margin-top: 4.375em; } }
 
 footer.footer--main {
   background-color: #2D2D2D;
@@ -528,9 +557,10 @@ footer.footer--main {
     font-size: 0.75em; }
   footer.footer--main section {
     padding-right: 0em;
-    padding-left: 0em; }
+    padding-left: 0em;
+    padding-bottom: 0.625em; }
   footer.footer--main .copyright {
-    margin-bottom: 0em; }
+    padding-bottom: 0em; }
 
 .footer__link-list {
   list-style: none;

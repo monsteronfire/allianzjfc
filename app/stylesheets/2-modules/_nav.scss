@@ -24,7 +24,11 @@ header.navigation {
   background-color: $navigation-background;
   /*border-bottom: 1px solid darken($navigation-background, 10);*/
   width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
   z-index: 999;
+  border-bottom: 1px solid $mercury;
 
   @include media($small-screen) {
     min-height: 60px;
@@ -100,8 +104,7 @@ header.navigation {
     }
   }
 
-  // Elements on the far right
-
+  /*Elements on the far right*/
   .navigation__content-right {
     @include clearfix;
     display: block;
@@ -144,4 +147,20 @@ header.navigation {
     padding: em(5);
   }
 
+}
+
+.navigation--height-offset {
+  $xxlarge-screen: em(1670);
+  $xlarge-screen: em(1280);
+  $large-screen: em(1024);
+  $medium-screen: em(768) !default;
+  $small-screen: em(300) !default;
+
+  @include media($small-screen) {
+    height: em(60);
+  }
+
+  @include media($medium-screen) {
+    height: em(70);
+  }
 }

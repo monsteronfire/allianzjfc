@@ -1,12 +1,20 @@
 .menu--offcanvas {
+  $xxlarge-screen: em(1670);
+  $xlarge-screen: em(1280);
+  $large-screen: em(1024);
+  $medium-screen: em(768) !default;
+  $small-screen: em(300) !default;
+
   position: fixed;
   top: 0;
   right: 0;
   z-index: 700;
-  background-color: $white;
+  background-color: rgba(255,255,255,1);
+  box-shadow: -5px 10px 15px 5px rgba(0,0,0,.1);
   height: 100%;
-  padding: em(90) em(20) em(20) em(20);
+  padding: em(20) em(20) em(20) em(20);
   text-align: right;
+  display: none;
 
   ul {
     list-style: none;
@@ -21,6 +29,27 @@
   }
 
   a {
+    color: $grey;
+    font-family: 'Montserrat', sans-serif;
+    font-size: em(13);
     text-decoration: none;
+    text-transform: uppercase;
+
+    &.inactive {
+      color: transparentize($grey, 0.7);
+      cursor: default;
+    }
+  }
+
+  &.show {
+    display: block;
+  }
+
+  @include media($small-screen) {
+    margin-top: em(60);
+  }
+
+  @include media($medium-screen) {
+    margin-top: em(70);
   }
 }

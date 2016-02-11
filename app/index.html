@@ -24,26 +24,27 @@
             <li><a href="javascript:void(0);">EN</a></li>
             <li><a href="javascript:void(0);">BM</a></li>
           </ul>
-          <a href="javascript:void(0);" class="navigation__menu-button">
+          <a id="js-menu-toggle" href="javascript:void(0);" class="navigation__menu-button">
             <i class="fa fa-navicon"></i>
           </a>
         </div>
       </div>
     </header>
+    <div class="navigation--height-offset"></div>
     <!-- Header End -->
 
     <!-- Sidebar/Off-Canvas Menu Start -->
-    <div class="menu--offcanvas">
+    <div id="js-offcanvas-menu" class="menu--offcanvas">
       <nav>
         <ul>
           <li><a href="javascript:void(0);">Registration</a></li>
           <li><a href="javascript:void(0);">Prizes</a></li>
           <li><a href="javascript:void(0);">FAQ</a></li>
           <li><a href="javascript:void(0);">Fixtures</a></li>
-          <li><a href="javascript:void(0);">Scores</a></li>
-          <li><a href="javascript:void(0);">Challengers</a></li>
-          <li><a href="javascript:void(0);">Gallery</a></li>
-          <li><a href="javascript:void(0);">AJFC Contest</a></li>
+          <li><a href="javascript:void(0);" class="inactive">Scores</a></li>
+          <li><a href="javascript:void(0);" class="inactive">Challengers</a></li>
+          <li><a href="javascript:void(0);" class="inactive">Gallery</a></li>
+          <li><a href="javascript:void(0);" class="inactive">AJFC Contest</a></li>
         </ul>
       </nav>
     </div>
@@ -53,6 +54,9 @@
     <section id="slider" class="slider-container">
       <ul class="slider-wrapper">
         <li class="current-slide">
+          <div class="slide--content">
+            
+          </div>
           <img src="images/slider-bg-1.jpg" class="slider__img" title="" alt="">
         </li>
 
@@ -78,9 +82,8 @@
 
     <!-- Footer Start -->
     <footer class="footer--main">
-      <section class="section">
-        <div class="section__inner">
-          <div class="footer__content--top">
+      <section>
+        <div class="footer__content--top">
             <ul class="footer__link-list">
               <li><a href="javascript:void(0);">Terms &amp; Conditions</a></li>
               <li><a href="javascript:void(0);">Privacy Policy</a></li>
@@ -91,13 +94,11 @@
               &copy; Allianz Malaysia Berhad (12428-W) 2015. All Rights Reserved
             </p>
           </div>
-        </div>
       </section>
     </footer>
     <!-- Footer End -->
   </div>
   <script src="scripts/plugins.js"></script>
-  <script src="scripts/handlebars-v4.0.5.js"></script>
   <script src="scripts/app.js"></script>
 </body>
 </html>
